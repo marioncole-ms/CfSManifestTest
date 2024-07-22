@@ -1,0 +1,14 @@
+Descriptor:
+  Name: Sarsid-GraphAPI
+  DisplayName: Sarsid-GraphAPI
+  Description: To connect to Microsoft Graph API
+  SupportedAuthTypes:
+    - AADDelegated
+  Authorization:
+    Type: AADDelegated
+    EntraScopes: https://graph.microsoft.com/.default
+
+SkillGroups:
+  - Format: API
+    Settings:
+      OpenApiSpecUrl: https://wmslabstorage.blob.core.windows.net/testconatiner1/GraphAPI-UserCalls.yaml
