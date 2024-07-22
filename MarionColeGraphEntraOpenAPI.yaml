@@ -1,0 +1,69 @@
+openapi: 3.0.1
+info:
+  title: Microsoft Graph API
+  version: 0.1
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+paths:
+  /users/{user_id}:
+    get:
+      summary: Get user profile
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User profile data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+				
+    /me:
+    get:
+      summary: Get my profile
+      responses:
+        '200':
+          description: User profile data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+                
+    /users/{id}/calendars/{id}:
+    get:
+      summary: Get user calendar
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User profile data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCalendar'
+      
+components:
+  schemas:
+    UserProfile:
+      type: object
+      properties:
+        displayName:
+          type: string
+        mail:
+          type: string
+    UserCalendar:
+      type: object
+      properties:
+         isDefaultCalendar:
+            type: string
+         canEdit:
+            type: string
+            
