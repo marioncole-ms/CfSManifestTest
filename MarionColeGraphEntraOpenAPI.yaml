@@ -3,7 +3,7 @@ info:
   title: Microsoft Graph API
   version: 1.0
 servers:
-  - url: https://graph.microsoft.com/v1.0/
+  - url: https://graph.microsoft.com/v1.0
 paths:
   /users/{user_id}:
     get:
